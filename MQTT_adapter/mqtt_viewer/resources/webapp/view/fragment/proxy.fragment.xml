@@ -1,0 +1,47 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:u="sap.ui.unified"
+	 xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	
+		
+		<f:Form  editable="true">
+			
+					<f:layout>
+						<f:ResponsiveGridLayout labelSpanXL="2"
+							labelSpanL="2" labelSpanM="2" labelSpanS="5" adjustLabelSpan="false"
+							emptySpanXL="2" emptySpanL="1" emptySpanM="1" emptySpanS="0"
+							columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false" />
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="Broker address">
+									<f:fields>
+										<Input  type="Text" showValueHelp="false"
+											enabled="true" visible="true" width="auto" valueHelpOnly="false"
+											maxLength="0" />
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Broker port">
+									<f:fields>
+										<Input  type="Text" showValueHelp="false"
+											enabled="true" visible="true" width="auto" valueHelpOnly="false"
+											maxLength="0" />
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Client ID">
+									<f:fields>
+										<Input  type="Text" showValueHelp="false"
+											enabled="true" visible="true" width="auto" valueHelpOnly="false"
+											maxLength="0" />
+									</f:fields>
+								</f:FormElement>
+
+							</f:formElements>
+						</f:FormContainer>
+
+					</f:formContainers>
+				</f:Form>
+				
+</core:FragmentDefinition>

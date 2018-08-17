@@ -1,0 +1,6 @@
+service {
+
+	"MQTT_adapter.MQTT_db.data::Devices.mqtt_header_device" as "DeviceHeaders";
+	"MQTT_adapter.MQTT_db.data::Devices.mqtt_item_device" as "DeviceItems";
+
+}

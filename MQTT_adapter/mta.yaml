@@ -1,0 +1,54 @@
+ID: MQTT_adapter
+_schema-version: '2.0'
+version: 0.0.1
+modules:
+  - name: mqtt_viewer
+    type: html5
+    path: mqtt_viewer
+    requires:
+      - name: MQTT_reciever
+      - name: MQTT_reciever_api
+      - name: odata_js
+      - name: odata_js_api
+        properties:
+          name: odata_js
+          url: '~{service_url}'
+          forwardAuthToken: true
+        group: destinations
+  - name: MQTT_reciever
+    type: nodejs
+    path: mqtt_reciever
+    requires:
+      - name: hdi_MQTT_db
+      - name: MQTT_db
+    provides:
+      - name: MQTT_reciever_api
+        properties:
+          url: '${default-url}'
+  - name: MQTT_db
+    type: hdb
+    path: mqtt_db
+    requires:
+      - name: hdi_MQTT_db
+  - name: odata_js
+    type: nodejs
+    path: odata_js
+    provides:
+      - name: odata_js_api
+        properties:
+          service_url: '${default-url}'
+    requires:
+      - name: hdi_MQTT_db
+      - name: MQTT_db
+resources:
+  - name: hdi_MQTT_db
+    parameters:
+      config:
+        schema: db
+    properties:
+      hdi-container-name: '${service-name}'
+    type: com.sap.xs.hdi-container
+  - name: hdi_systemdb
+    properties:
+      hdi-container-name_2: '${service-name}'
+    type: com.sap.xs.hdi-container

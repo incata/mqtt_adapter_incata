@@ -1,0 +1,4 @@
+{
+    "name":    "MQTT_adapter.MQTT_db",
+    "subfolder": "append"
+}

@@ -1,0 +1,21 @@
+.custoTabBarMargins {
+	margin-top: -2rem;
+}
+
+.sapMIBar.sapMHeader-CTX {
+	background-color: transparent;
+}
+
+.sapMIBar-CTX .sapMTitle {
+	font-size: x-large;
+	font-weight: bold;
+}
+
+.sapMBar {
+	box-shadow: inset 0 -0.0625rem #EBEBEB
+	}
+	
+	
+.sapMSplitContainerMaster { 
+    background-color: #3F5161; 
+}

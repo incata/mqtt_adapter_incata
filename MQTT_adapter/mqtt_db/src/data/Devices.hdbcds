@@ -1,0 +1,73 @@
+namespace MQTT_adapter.MQTT_db.data;
+
+@OData.publish : true
+context Devices {
+
+    /*@@layout{"layoutInfo":{"x":-495,"y":-238}}*/
+    type username : String(80);
+
+
+    /*@@layout{"layoutInfo":{"x":-495,"y":-193}}*/
+    type device_alias : String(20);
+
+    /*@@layout{"layoutInfo":{"x":-495,"y":-149}}*/
+    type device_url : String(80);
+
+    /*@@layout{"layoutInfo":{"x":-495,"y":-108}}*/
+    type device_port : String(5);
+
+    /*@@layout{"layoutInfo":{"x":-495,"y":-58}}*/
+    type device_pass : String(40);
+
+    /*@@layout{"layoutInfo":{"x":-495,"y":-13}}*/
+    type topic_name : String(40);
+
+    /*@@layout{"layoutInfo":{"x":-495,"y":32}}*/
+    type topic_qos : Decimal(2, 1);
+
+    /*@@layout{"layoutInfo":{"x":-25,"y":-239.5}}*/
+    type device {
+        device_alias : Devices.device_alias;
+        device_url   : Devices.device_url;
+        device_port  : Devices.device_port;
+        device_pass  : Devices.device_pass;
+    };
+
+    /*@@layout{"layoutInfo":{"x":-495,"y":77}}*/
+    type read_value : String(10);
+
+    /*@@layout{"layoutInfo":{"x":-495,"y":116}}*/
+    type timestamp : UTCDateTime;
+
+    /*@@layout{"layoutInfo":{"x":-36,"y":60.5}}*/
+    entity mqtt_header_device {
+        key username     : Devices.username;
+        key device_alias : Devices.device_alias;
+            device_url   : Devices.device_url;
+            device_port  : Devices.device_port;
+            device_user  : Devices.device_user;
+            device_pass  : Devices.device_pass;
+            client_id    : Devices.client_id;
+            connected    : Devices.connected;
+    };
+
+
+    /*@@layout{"layoutInfo":{"x":-36,"y":199.5}}*/
+    entity mqtt_item_device {
+        key username     : Devices.username;
+        key device_alias : Devices.device_alias;
+        key topic_name   : Devices.topic_name;
+            topic_qos    : Devices.topic_qos;
+            read_value   : Devices.read_value;
+            timestamp    : Devices.timestamp;
+    };
+
+    /*@@layout{"layoutInfo":{"x":-495,"y":160}}*/
+    type client_id : String(20);
+
+    /*@@layout{"layoutInfo":{"x":-495,"y":202}}*/
+    type connected : String(1);
+
+    /*@@layout{"layoutInfo":{"x":-495,"y":239}}*/
+    type device_user : String(20);
+};

@@ -1,0 +1,9 @@
+{
+	"welcomeFile": "webapp/index.html",
+	"authenticationMethod": "none",
+	"routes": [{
+ "source": "^/xsodata/devices.xsodata/.*$",
+ "destination": "odata_js"
+	}]
+ 
+}

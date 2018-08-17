@@ -1,0 +1,20 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:u="sap.ui.unified">
+		<u:Menu
+			itemSelect="handleMenuItemPress">
+			<u:MenuItem
+				text="Add device..."
+				icon="sap-icon://add-product"/>
+			<u:MenuItem
+				text="Delete device..."
+				icon="sap-icon://delete" />
+			
+			<u:MenuTextFieldItem
+				label="Find"
+				enabled="true"
+				startsSection="true"
+				icon="sap-icon://filter"/>
+		</u:Menu>
+</core:FragmentDefinition>

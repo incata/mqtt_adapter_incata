@@ -1,0 +1,13 @@
+PROCEDURE "MQTT_adapter.MQTT_db.procedures::insert_device" (
+	IN im_username VARCHAR(10), im_dev_alias  varchar(20),
+	OUT ex_header  "MQTT_adapter.MQTT_db.data::Devices.mqtt_header_device" 
+) 
+LANGUAGE SQLSCRIPT
+SQL SECURITY INVOKER
+--DEFAULT SCHEMA <default_schema_name>
+READS SQL DATA AS
+BEGIN
+ex_header = SELECT * FROM "MQTT_adapter.MQTT_db.data::Devices.mqtt_header_device"  
+WHERE "username" = im_username; 
+
+END
